@@ -16,7 +16,7 @@ KEYLOG = ['Listening', 'Save']
 COMPUTER_INFORMATION = ['Show']
 CHANGE_WALLPAPER = ['Apply']
 COMMAND = ['RCE']
-SERVER_FILE = ['Show']
+SERVER_FILE = ['Show', 'Change Ip', 'Change Port']
 EXE_FILE = ['File Creation']
 
 running = True
@@ -423,8 +423,67 @@ def server_file_management(menu_num):
             if select == menu_num:
                 break
             elif SERVER_FILE[select] == SERVER_FILE[0]:
-                print("[+] Please check the client.py file!")
-                print("[+] Change IP and PORT!")
+                with open('client.py','r') as f:
+                    lines = f.readlines()
+                    for l in lines:
+                        new_string = l.rstrip()
+                        if 'IP = ' in new_string:
+                            print('[+] Current Client {}'.format(new_string))
+                        if 'PORT = ' in new_string:
+                            print('[+] Current Client {}'.format(new_string))
+                            break
+            elif SERVER_FILE[select] == SERVER_FILE[1]:
+                print('[+] Match the server IP with the client.py file IP!')
+                with open('client.py','r') as f:
+                    lines = f.readlines()
+                    for l in lines:
+                        new_string = l.rstrip()
+                        if 'IP = ' in new_string:
+                            print('[+] Current Client {}'.format(new_string))
+                            break
+                change_ip = input('[*] Change Server Ip : ')
+                new_text_content = ''
+                new_word = "IP = '{}'".format(change_ip)
+                with open('client.py','r') as f:
+                    lines = f.readlines()
+                    for l in lines:
+                        new_string = l.rstrip()
+                        if new_string:
+                            if 'IP = ' in new_string:
+                                new_text_content += new_word + '\n'
+                            else:
+                                new_text_content += new_string + '\n'
+                        else:
+                            new_text_content += '\n'
+                with open('client.py','w') as f:
+                    f.write(new_text_content)
+                print('[+] Change Server Ip : {}'.format(change_ip))
+            elif SERVER_FILE[select] == SERVER_FILE[2]:
+                print('[+] Match the server.py file PORT with the client.py file PORT!')
+                with open('client.py','r') as f:
+                    lines = f.readlines()
+                    for l in lines:
+                        new_string = l.rstrip()
+                        if 'PORT = ' in new_string:
+                            print('[+] Current Client {}'.format(new_string))
+                            break
+                change_port = input('[*] Change Server Port : ')
+                new_text_content = ''
+                new_word = "PORT = {}".format(change_port)
+                with open('client.py','r') as f:
+                    lines = f.readlines()
+                    for l in lines:
+                        new_string = l.rstrip()
+                        if new_string:
+                            if 'PORT = ' in new_string:
+                                new_text_content += new_word + '\n'
+                            else:
+                                new_text_content += new_string + '\n'
+                        else:
+                            new_text_content += '\n'
+                with open('client.py','w') as f:
+                    f.write(new_text_content)
+                print('[+] Change Server Port : {}'.format(change_port))
         except:
             print("[-] Can't Select")
     print("[+] Return Menu")

