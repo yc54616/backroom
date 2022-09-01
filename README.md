@@ -9,7 +9,7 @@
 3. server.py 파일을 실행시킵니다.<br>
 ![image](https://user-images.githubusercontent.com/74079392/187984387-3e409bb9-52bc-4b4b-b672-7e3c9be498b2.png)
 ![image](https://user-images.githubusercontent.com/74079392/187984447-a27c266b-4b31-4f24-b8f6-488ed87a670a.png)<br><br>
-4. 6을 눌러 client.py의 IP와 PORT를 설정합니다. 2번에서 했던 포트포워딩한 주소로 설정합니다.
-![image](https://user-images.githubusercontent.com/74079392/187985669-3ad29f0f-f653-4dcf-8b5f-16f8380d2e7f.png)
-5. 메뉴로 나와 8번을 눌러 exe파일을 제작합니다. (python 라이브러리 pyinstaller을 이용하였습니다.)
-![image](https://user-images.githubusercontent.com/74079392/187985861-5a5a40fe-ef6f-406e-b253-b047473c0313.png)
+4. 6을 눌러 client.py의 IP와 PORT를 설정합니다. 2번에서 했던 포트포워딩한 주소로 설정합니다.<br>
+![image](https://user-images.githubusercontent.com/74079392/187985669-3ad29f0f-f653-4dcf-8b5f-16f8380d2e7f.png)<br><br>
+5. 메뉴로 나와 8번을 눌러 exe파일을 제작합니다. (python 라이브러리 pyinstaller을 이용하였습니다.)<br>
+![image](https://user-images.githubusercontent.com/74079392/187985861-5a5a40fe-ef6f-406e-b253-b047473c0313.png)<br><br>
