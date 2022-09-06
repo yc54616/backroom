@@ -23,4 +23,9 @@
 10. 연결이 성공적으로 완료되었다면 원하는 명령을 수행할 수 있습니다.<br>
 ![image](https://user-images.githubusercontent.com/74079392/187991366-fce07668-6bd2-4130-84b3-54f841e472c5.png)<br><br>
 
+# 시연 영상
+https://user-images.githubusercontent.com/74079392/188720609-abeacbc1-7602-4d98-b691-828cfdcbaf67.mp4
+
+
+
 
