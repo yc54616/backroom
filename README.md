@@ -24,8 +24,4 @@
 ![image](https://user-images.githubusercontent.com/74079392/187991366-fce07668-6bd2-4130-84b3-54f841e472c5.png)<br><br>
 
 # 시연 영상
-https://user-images.githubusercontent.com/74079392/188720609-abeacbc1-7602-4d98-b691-828cfdcbaf67.mp4
-
-
-
-
+https://user-images.githubusercontent.com/74079392/188720784-30b5c1bd-11ee-433d-89df-51c7b254a1ed.mp4
