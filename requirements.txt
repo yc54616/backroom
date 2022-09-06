@@ -2,4 +2,4 @@ Pillow
 pyautogui
 opencv-python
 pynput
-psutil
+psutila
